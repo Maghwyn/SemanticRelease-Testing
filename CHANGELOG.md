@@ -1,3 +1,16 @@
+# 1.0.0 (2024-03-09)
+
+
+### Features
+
+* **release:** Test ([29b537d](https://github.com/Maghwyn/testing/commit/29b537d5a7cf7b2269cd0d31ece3e6c1f0794d92))
+* **test:** feat ([1805786](https://github.com/Maghwyn/testing/commit/180578693eff3a00ada6aeca86d0cd0d4cef02f2))
+* **test:** feat ([8b2691a](https://github.com/Maghwyn/testing/commit/8b2691a2b79c7d5f0f0b7c1bce5e441d094808ec))
+* **test:** feat ([364d163](https://github.com/Maghwyn/testing/commit/364d163e633f3500c7082fa8042d529b5e1a37f5))
+* **test:** feat ([819a8c4](https://github.com/Maghwyn/testing/commit/819a8c4a228aecc2cfef7683eb3b387e19e85600))
+* **test:** testing ([2df5e66](https://github.com/Maghwyn/testing/commit/2df5e66b53521091404708595a40b420692ea4ce))
+* **test:** trying smt ([f16b0c6](https://github.com/Maghwyn/testing/commit/f16b0c64419dd240bc7f3d25c1f53a13b4f17f80))
+
 # [1.0.0-dev.18](https://github.com/Maghwyn/meme-rn-app/compare/v1.0.0-dev.17...v1.0.0-dev.18) (2024-03-08)
 
 
