@@ -66,6 +66,6 @@ jobs:
         with:
           name: test-js-artifact
       - name: Publish APK
-        run: gh release upload ${{ env.RELEASE_VERSION }} test.js
+        run: gh release upload ${{ needs.automatic_version_release.env.RELEASE_VERSION }} test.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
