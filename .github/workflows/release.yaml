@@ -27,7 +27,9 @@ jobs:
       - name: Bundle JavaScript files
         run: yarn build:android
       - name: Navigate to Android directory
-        run: cd android
+        run: |
+          cd android
+          ls -al
       - name: Build debug APK
         run: gradlew assembleDebug
       - name: Copy APK
