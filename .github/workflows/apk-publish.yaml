@@ -10,14 +10,14 @@ on:
       - completed
 
 jobs:
-  publish_android_apk_release:
-    name: Publish Release
+  publish_android_debug_apk_release:
+    name: Automatic Android Debug APK Publish Release
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
       - name: Publish APK
-        run: gh release upload ${{github.event.release.tag_name}} test.js
+        run: gh release upload latest test.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
