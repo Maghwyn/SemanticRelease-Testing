@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Maghwyn/testing/compare/v1.3.0...v1.4.0) (2024-03-09)
+
+
+### Features
+
+* **test:** test ([764df0c](https://github.com/Maghwyn/testing/commit/764df0c496426748fed234f1ba945356cfee1c63))
+
 # [1.3.0](https://github.com/Maghwyn/testing/compare/v1.2.0...v1.3.0) (2024-03-09)
 
 
