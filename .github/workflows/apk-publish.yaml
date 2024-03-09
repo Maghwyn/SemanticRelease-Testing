@@ -18,6 +18,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
       - name: Publish APK
-        run: gh release upload ${{ github.event.workflow_run.head_commit.message }} test.js
+        run: gh release upload ${{github.event.release.tag_name}} test.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
