@@ -30,7 +30,9 @@ jobs:
       - name: Install Node.js Dependencies
         run: yarn install --frozen-lockfile --ignore-scripts
       - name: Test file
-        run: touch test.js
+        run: |
+          touch test.js
+          echo "const a = 10" > test.js
       - name: Archive test.js artifact
         uses: actions/upload-artifact@v4
         with:
