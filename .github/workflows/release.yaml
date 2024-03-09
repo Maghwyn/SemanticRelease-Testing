@@ -67,7 +67,7 @@ jobs:
           name: test-js-artifact
       - name: Publish APK
         run: |
-          echo "Released version: $RELEASING_VERSION"
-          gh release upload $RELEASING_VERSION test.js
+          echo "Released version: $RELEASE_VERSION"
+          gh release upload $RELEASE_VERSION test.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
