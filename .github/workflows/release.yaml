@@ -32,7 +32,7 @@ jobs:
       - name: Test file
         run: touch test.js
       - name: Archive test.js artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v2
         with:
           name: test-js-artifact
           path: test.js
@@ -44,12 +44,13 @@ jobs:
   publish_android_debug_apk_release:
     name: Automatic Android Debug APK Publish Release
     runs-on: ubuntu-latest
-    if: ${{ needs.automatic_version_release.result == 'success' }}
+    needs: automatic_version_release
+    if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev') && github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
       - name: Download test.js artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v2
         with:
           name: test-js-artifact
       - name: Publish APK
