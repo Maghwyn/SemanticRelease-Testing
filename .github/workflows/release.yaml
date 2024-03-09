@@ -36,10 +36,14 @@ jobs:
         with:
           name: test-js-artifact
           path: test.js
-      - name: Semantic Release
+      - name: Set Semantic Release Version (hacky)
         run: |
-          version=$(npx semantic-release | grep "Created tag" | awk '{print $3}')
+          version=$(npx semantic-release --dry-run | grep 'The next release version is' | sed -E 's/.* ([[:digit:].]+)$/\1/')
           echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Semantic Release
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
