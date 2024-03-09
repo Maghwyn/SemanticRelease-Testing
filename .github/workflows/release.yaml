@@ -45,7 +45,6 @@ jobs:
     name: Automatic Android Debug APK Publish Release
     runs-on: ubuntu-latest
     needs: automatic_version_release
-    if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev') && github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
