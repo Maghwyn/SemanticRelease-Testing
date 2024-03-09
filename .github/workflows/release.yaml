@@ -48,34 +48,36 @@ jobs:
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Wait for release to be available (hacky)
-      #   run: sleep 60s
-      # - name: Showing all releases
-      #   run: gh release list
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Publish Android Debug APK
-      #   run: gh release upload v${{ env.RELEASE_VERSION }} test.js
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  publish_android_debug_apk_release:
-    name: Automatic Android Debug APK Publish Release
-    runs-on: ubuntu-latest
-    if: ${{ needs.automatic_version_release.result == 'success' }}
-    needs: [automatic_version_release]
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Setup Node.js v20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Download test.js artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: test-js-artifact
-      - name: Publish APK
-        run: gh release upload Latest test.js
+      - name: Showing all releases
+        run: gh release list
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish Android Debug APK
+        run: gh release upload v${{ env.RELEASE_VERSION }} test.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # ------------------------------------------------------------------
+  # Does not work, i'm unsure how to pass the dynamic var between jobs
+  # ------------------------------------------------------------------
+
+  # publish_android_debug_apk_release:
+  #   name: Automatic Android Debug APK Publish Release
+  #   runs-on: ubuntu-latest
+  #   if: ${{ needs.automatic_version_release.result == 'success' }}
+  #   needs: [automatic_version_release]
+  #   steps:
+  #     - name: Checkout Repository
+  #       uses: actions/checkout@v4
+  #     - name: Setup Node.js v20
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 20
+  #     - name: Download test.js artifact
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: test-js-artifact
+  #     - name: Publish APK
+  #       run: gh release upload Latest test.js
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
