@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/Maghwyn/testing/compare/v1.4.4...v1.4.5) (2024-03-09)
+
+
+### Bug Fixes
+
+* **wg:** rz ([f6450a0](https://github.com/Maghwyn/testing/commit/f6450a09eaefe19557305362f2604aa8332d02e3))
+
 ## [1.4.4](https://github.com/Maghwyn/testing/compare/v1.4.3...v1.4.4) (2024-03-09)
 
 
