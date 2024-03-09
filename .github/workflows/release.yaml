@@ -15,8 +15,6 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
-    env:
-      RELEASE_VERSION: ""
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -50,6 +48,8 @@ jobs:
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Wait for release to be available (hacky)
+        run: sleep 10s
       - name: Publish Android Debug APK
         run: gh release upload ${{ env.RELEASE_VERSION }} test.js
         env:
