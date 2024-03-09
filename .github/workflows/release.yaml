@@ -30,8 +30,7 @@ jobs:
         run: |
           cd android
           ls -al
-      - name: Build debug APK
-        run: gradlew assembleDebug
+          ./gradlew assembleDebug
       - name: Copy APK
         run: cp app/build/outputs/apk/debug/app-debug.apk ../app-debug.apk
       - name: Semantic Release
