@@ -41,7 +41,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    publish_android_debug_apk_release:
+  publish_android_debug_apk_release:
     name: Automatic Android Debug APK Publish Release
     runs-on: ubuntu-latest
     if: ${{ needs.automatic_version_release.result == 'success' }}
