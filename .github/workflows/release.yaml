@@ -24,6 +24,14 @@ jobs:
           node-version: 20
       - name: Install Node.js Dependencies
         run: yarn install --frozen-lockfile --ignore-scripts
+      - name: Bundle JavaScript files
+        run: yarn build:android
+      - name: Navigate to Android directory
+        run: cd android
+      - name: Build debug APK
+        run: ./gradlew assembleDebug
+      - name: Copy APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk ../app-debug.apk
       - name: Semantic Release
         run: npx semantic-release
         env:

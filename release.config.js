@@ -35,6 +35,13 @@ const config = {
 				"message": "ci(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
 			}
 		],
+		[
+			"@semantic-release/exec",
+			{
+				"publishCmd": "gh release upload ${nextRelease.version} app-debug.apk",
+				"successCmd": "rm app-debug.apk"
+			}
+		],
 		"@semantic-release/github"
 	]
 }
