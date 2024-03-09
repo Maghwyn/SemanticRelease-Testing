@@ -32,7 +32,9 @@ jobs:
       - name: Bundle JavaScript files
         run: yarn build:android
       - name: Build debug APK
-        run: android/gradlew assembleDebug
+        run: |
+          cd android
+          ./gradlew assembleDebug
       - name: Copy APK
         run: cp android/app/build/outputs/apk/debug/app-debug.apk app-debug.apk
       - name: Semantic Release
