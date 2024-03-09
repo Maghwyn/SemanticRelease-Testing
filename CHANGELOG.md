@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/Maghwyn/testing/compare/v1.4.1...v1.4.2) (2024-03-09)
+
+
+### Bug Fixes
+
+* **test:** test ([d06beba](https://github.com/Maghwyn/testing/commit/d06beba261e60de0fc95ed6371c596e310b8cd05))
+
 ## [1.4.1](https://github.com/Maghwyn/testing/compare/v1.4.0...v1.4.1) (2024-03-09)
 
 
