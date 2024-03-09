@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/Maghwyn/testing/compare/v1.4.3...v1.4.4) (2024-03-09)
+
+
+### Bug Fixes
+
+* **wtf:** why is it skipped ([c26d316](https://github.com/Maghwyn/testing/commit/c26d316379d88d2b2bb0a7ad68c20d40e83b1870))
+
 ## [1.4.3](https://github.com/Maghwyn/testing/compare/v1.4.2...v1.4.3) (2024-03-09)
 
 
