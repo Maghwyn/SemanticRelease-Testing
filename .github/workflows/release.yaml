@@ -38,7 +38,8 @@ jobs:
           path: test.js
       - name: Semantic Release
         run: |
-          echo "RELEASING_VERSION=$(npx semantic-release --print-version)" >> $GITHUB_ENV
+          version=$(npx semantic-release | grep "Created tag" | awk '{print $3}')
+          echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
