@@ -17,6 +17,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+      - name: Download test.js artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: test-js-artifact
       - name: Publish APK
         run: gh release upload latest test.js
         env:
