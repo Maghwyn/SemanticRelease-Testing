@@ -38,7 +38,7 @@ const config = {
 		[
 			"@semantic-release/exec",
 			{
-				"publishCmd": "gh release upload ${nextRelease.version} app-debug.apk",
+				"publishCmd": "gh release upload latest app-debug.apk",
 				"successCmd": "rm app-debug.apk"
 			}
 		],
