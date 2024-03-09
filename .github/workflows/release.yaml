@@ -37,7 +37,9 @@ jobs:
           name: test-js-artifact
           path: test.js
       - name: Semantic Release
-        run: npx semantic-release
+        run: |
+          npx semantic-release
+          echo "::set-output name=version::$(npx semantic-release --print-version)"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -58,6 +60,8 @@ jobs:
         with:
           name: test-js-artifact
       - name: Publish APK
-        run: gh release upload latest test.js
+        run: |
+          echo "Released version: ${{ needs.automatic_version_release.outputs.version }}"
+          gh release upload ${{ needs.automatic_version_release.outputs.version }} test.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
