@@ -1,0 +1,23 @@
+name: Publish Release
+
+on:
+  workflow_run:
+    workflows: ["Semantic Release"]
+    branches:
+      - main
+      - dev
+    types:
+      - completed
+
+jobs:
+  publish_android_apk_release:
+    name: Publish Release
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Publish APK
+        run: gh release upload ${{ github.event.workflow_run.head_commit.message }} test.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
